@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тойға шақыру • Аruzhan & Dias</title>
+  <meta name="description" content="Тойға шақыру: Аruzhan & Dias. Күні, уақыты, мекенжайы, фото-галерея және RSVP." />
+  <meta name="theme-color" content="#141524" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Schema.org structured data for rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Aruzhan & Dias тойы",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "startDate": "2025-09-20T18:00:00+06:00",
+    "endDate": "2025-09-21T00:00:00+06:00",
+    "location": {
+      "@type": "Place",
+      "name": "Golden Hall Тойхана",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Алматы",
+        "addressRegion": "Алматы обл.",
+        "addressCountry": "KZ",
+        "streetAddress": "Абая 10"
+      }
+    },
+    "image": ["/assets/cover.jpg"],
+    "description": "Жақындарымызды қуанышымызбен бөлісуге шақырамыз",
+    "organizer": {"@type": "Organization", "name": "Family"}
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0f1020;
+      --card: #16172b;
+      --text: #f5f6fb;
+      --muted: #c8c9d3;
+      --accent: #d4af37; /* золото */
+      --accent-2: #7aa8ff; /* мягкий синий для ссылок */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(212,175,55,.15), transparent 60%), var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+    /* Header / Hero */
+    .hero {
+      position: relative; isolation: isolate; padding: 96px 0 56px;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: url('/assets/pattern.svg') center/600px repeat; opacity: .06;
+      filter: contrast(120%) saturate(110%);
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius);
+      padding: 28px; box-shadow: var(--shadow);
+    }
+    .tag { display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(212,175,55,.12); color: var(--accent); font-weight: 700; letter-spacing: .04em; font-size: 12px; }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: clamp(28px, 6vw, 56px);
+      line-height: 1.1; margin: 16px 0 10px;
+    }
+    .subtitle { color: var(--muted); font-weight: 500; margin-bottom: 20px; }
+
+    .hero-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; }
+    @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      appearance: none; border: none; cursor: pointer; font-weight: 700;
+      padding: 14px 18px; border-radius: 12px; transition: .2s ease;
+    }
+    .btn-primary { background: var(--accent); color: #1a1a1a; }
+    .btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.14); }
+    .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+    .cover { border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+
+    /* Countdown */
+    .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 18px 0 8px; }
+    .cd-box { text-align: center; padding: 14px 10px; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; background: rgba(255,255,255,.03); }
+    .cd-num { font-size: clamp(22px, 6vw, 32px); font-weight: 800; }
+    .cd-label { color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+    @media (max-width: 520px) { .countdown { grid-template-columns: repeat(2, 1fr);} }
+
+    /* Sections */
+    section { padding: 48px 0; }
+    .section-card { background: var(--card); border-radius: var(--radius); border: 1px solid rgba(255,255,255,.08); padding: 22px; box-shadow: var(--shadow); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5vw, 36px); margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+
+    /* Grid utilities */
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr);} 
+    .grid-3 { grid-template-columns: repeat(3, 1fr);} 
+    @media (max-width: 820px){ .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    /* Gallery */
+    .gallery img { border-radius: 12px; border: 1px solid rgba(255,255,255,.08); width: 100%; height: 220px; object-fit: cover; }
+
+    /* Map */
+    .map { border: 0; width: 100%; height: 360px; border-radius: 12px; filter: grayscale(.1) saturate(1.1) contrast(1.05); }
+
+    /* RSVP */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .input, .select, textarea { width: 100%; background: rgba(255,255,255,.06); color: var(--text); border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 12px 14px; font-size: 14px; }
+    textarea { min-height: 90px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    @media (max-width: 720px){ .form-grid { grid-template-columns: 1fr; } .full { grid-column: auto; } }
+
+    /* Footer */
+    footer { padding: 28px 0 56px; color: var(--muted); font-size: 14px; text-align: center; }
+
+    /* Appear on scroll */
+    [data-animate] { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
+    [data-animate].visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card" data-animate>
+        <span class="tag">Тойға шақыру</span>
+        <h1 class="title">Aruzhan & Dias</h1>
+        <p class="subtitle">20 қыркүйек 2025 · 18:00 · Golden Hall, Алматы</p>
+
+        <!-- Countdown -->
+        <div class="countdown" id="countdown">
+          <div class="cd-box"><div class="cd-num" id="cd-days">—</div><div class="cd-label">күн</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-hours">—</div><div class="cd-label">сағ</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-min">—</div><div class="cd-label">мин</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-sec">—</div><div class="cd-label">сек</div></div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#rsvp">Қатысамын</a>
+          <a class="btn btn-ghost" href="#details">Толығырақ</a>
+        </div>
+      </div>
+
+      <div class="cover" data-animate>
+        <!-- Обложка (без видео). Вставь своё изображение 1600x1000 -->
+        <img src="/assets/cover.jpg" alt="Aruzhan & Dias — тойға шақыру" loading="eager" width="1600" height="1000">
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Details -->
+    <section id="details">
+      <div class="section-card grid grid-2" data-animate>
+        <div>
+          <h2 class="section-title">Мерекенің мәліметтері</h2>
+          <p class="muted">Біздің қуанышымызға ортақтасуға шақырамыз. Той 20 қыркүйек күні 18:00-де басталады. Киім коды — classic/chic, жайлы және салтанатты.</p>
+          <ul>
+            <li><strong>Күні:</strong> 20.09.2025</li>
+            <li><strong>Басталуы:</strong> 18:00</li>
+            <li><strong>Мекенжай:</strong> Алматы, Абая 10 — Golden Hall</li>
+            <li><strong>Байланыс:</strong> <a href="tel:+77001234567">+7 700 123 45 67</a></li>
+          </ul>
+          <div class="cta-row" style="margin-top:10px;">
+            <a class="btn btn-ghost" href="#map">Картаға өту</a>
+            <a class="btn btn-ghost" id="saveToCalendar" href="#">Күнтізбеге қосу</a>
+          </div>
+        </div>
+        <div>
+          <div class="gallery grid grid-3">
+            <!-- Галерея: замени пути на свои изображения -->
+            <img src="/assets/g1.jpg" alt="photo 1" loading="lazy" width="600" height="400">
+            <img src="/assets/g2.jpg" alt="photo 2" loading="lazy" width="600" height="400">
+            <img src="/assets/g3.jpg" alt="photo 3" loading="lazy" width="600" height="400">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule / Program -->
+    <section>
+      <div class="section-card" data-animate>
+        <h2 class="section-title">Бағдарлама</h2>
+        <ol class="muted" style="line-height:1.8">
+          <li>18:00 — Қонақтарды қарсы алу</li>
+          <li>18:30 — Рәсім</li>
+          <li>19:30 — Дастархан</li>
+          <li>21:00 — Би және құттықтаулар</li>
+          <li>23:30 — Торт</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- RSVP form -->
+    <section id="rsvp">
+      <div class="section-card" data-animate>
+        <h2 class="section-title">RSVP — Қатысуыңызды растаңыз</h2>
+        <form id="rsvpForm" class="form-grid" onsubmit="return sendRSVP(event)">
+          <input class="input" type="text" name="name" placeholder="Аты-жөні" required>
+          <input class="input" type="tel" name="phone" placeholder="Телефон" required>
+          <select class="select" name="guests" required>
+            <option value="1">1 қонақ</option>
+            <option value="2">2 қонақ</option>
+            <option value="3">3 қонақ</option>
+            <option value="4">4 қонақ</option>
+          </select>
+          <select class="select" name="status" required>
+            <option value="Келемін">Келемін</option>
+            <option value="Келе алмаймын">Келе алмаймын</option>
+          </select>
+          <button class="btn btn-primary full" type="submit">Жіберу (WhatsApp)</button>
+        </form>
+        <p class="muted" style="margin-top:10px;">Пішін WhatsApp арқылы хабарлама дайындайды — тек жіберу керек.</p>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section id="map">
+      <div class="section-card" data-animate>
+        <h2 class="section-title">Мекенжай</h2>
+        <p class="muted">Алматы, Абая 10 — Golden Hall. Төмендегі картаны пайдаланыңыз.</p>
+        <!-- Замените q-параметр на свой адрес -->
+        <iframe class="map" loading="lazy" allowfullscreen
+          src="https://www.google.com/maps?q=Алматы%20Абая%2010&output=embed"></iframe>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+      © 2025 • Шақыру • Жасалған: <a href="https://example.com">shohan.dev</a>
+      <div style="margin-top:8px">Бұл веб-қосымша оффлайн белгіше ретінде сақталуы мүмкін (home screen).</div>
+    </footer>
+  </main>
+
+  <!-- Optional: место для твоего видео, если захочешь вставить позже -->
+  <!--
+  <section class="container">
+    <div class="section-card" data-animate>
+      <h2 class="section-title">Видеосәлем</h2>
+      <video controls playsinline poster="/assets/cover.jpg" style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.08)">
+        <source src="/assets/invite.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+  -->
+
+  <script>
+    // Intersection Observer: плавное появление секций
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: .2 });
+    document.querySelectorAll('[data-animate]').forEach(el=> io.observe(el));
+
+    // Countdown
+    const targetISO = '2025-09-20T18:00:00+06:00';
+    function updateCountdown(){
+      const t = new Date(targetISO).getTime() - Date.now();
+      const d = Math.max(0, Math.floor(t / (1000*60*60*24)));
+      const h = Math.max(0, Math.floor((t / (1000*60*60)) % 24));
+      const m = Math.max(0, Math.floor((t / (1000*60)) % 60));
+      const s = Math.max(0, Math.floor((t / 1000) % 60));
+      document.getElementById('cd-days').textContent = d;
+      document.getElementById('cd-hours').textContent = h.toString().padStart(2,'0');
+      document.getElementById('cd-min').textContent = m.toString().padStart(2,'0');
+      document.getElementById('cd-sec').textContent = s.toString().padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Add to calendar (.ics) генерация
+    document.getElementById('saveToCalendar').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const title = 'Aruzhan & Dias тойы';
+      const desc = 'Тойға шақыру — күтеміз!';
+      const location = 'Алматы, Абая 10 — Golden Hall';
+      const start = '20250810T120000Z'; // 18:00 +06:00 => 12:00Z
+      const end   = '20250820T180000Z';
+      const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Invite//KK//\nBEGIN:VEVENT\nUID:${Date.now()}@invite\nDTSTAMP:${start}\nDTSTART:${start}\nDTEND:${end}\nSUMMARY:${title}\nDESCRIPTION:${desc}\nLOCATION:${location}\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([ics], {type:'text/calendar'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'invite.ics'; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url), 1000);
+    });
+
+    // WhatsApp RSVP
+    function sendRSVP(ev){
+      ev.preventDefault();
+      const f = ev.target;
+      const name = f.name.value.trim();
+      const phone = f.phone.value.trim();
+      const guests = f.guests.value;
+      const status = f.status.value;
+      const note = f.note.value.trim();
+      const msg = `Салем! Мен RSVP жіберемін:%0AАты-жөні: ${name}%0AТелефон: ${phone}%0AҚонақ саны: ${guests}%0AМәртебе: ${status}%0AЕскертпе: ${note || '-'}%0A`;
+      const hostPhone = '77052730190'; // <-- замени на свой номер без +
+      const url = `https://wa.me/${hostPhone}?text=${msg}`;
+      window.open(url, '_blank');
+      return false;
+    }
+    window.sendRSVP = sendRSVP;
+  </script>
+</body>
+</html>
